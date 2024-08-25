@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FETCH_API_CRUD</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
@@ -36,7 +36,7 @@
                                     <input type="text" class="form-control" id="name" placeholder="Enter name">
                                 </div>
                                 <div class="form-group">
-                                    <label for="">Enter email:</label>
+                                    <label for="">Enter price:</label>
                                     <input type="text"class="form-control" placeholder="Enter price" id="price">
                                 </div>
                 
@@ -72,7 +72,7 @@ var numb = 0;
 
 function callnumb(id, name, price) {
 
-        numb = id; // Assume sik is a global variable
+        numb = id; 
         document.getElementById("submit").textContent = "Edit data";
         document.getElementById("name").value = name;
         document.getElementById("price").value = price;
@@ -83,7 +83,7 @@ function Update(ID){
   fetch(`https://localhost:7169/api/Products/${ID}`, {
     method: 'PUT',
     body: JSON.stringify({
-      id: ID, // Ensure correct ID is sent
+      id: ID, 
       name: document.getElementById("name").value,
       price: document.getElementById("price").value,
     }),
@@ -140,7 +140,7 @@ function Delete(ID) {
    fetch(`https://localhost:7169/api/Products/${ID}`, {
   method: 'DELETE',
 });
-alert('yes');
+
 }
 
 
